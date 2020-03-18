@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ag-Grid Basic Example</title>
+    <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.8/jquery.csv.min.js"></script>
+    <script src="mls_analysis.js"></script>
+</head>
+<body>
+  <select id="stats">
+    <option value="1">Goals</option>
+    <option value="2">Adjusted Goals (538)</option>
+    <option value="3">Shot xG (538)</option>
+    <option value="4">Non-shot xG (538)</option>
+    <option value="5">xG (Opta)</option>
+    <option value="6">Team xG (ASA)</option>
+    <option value="7">Player xG (ASA)</option>
+    <option value="9">xPts (ASA)</option>
+    <option value="8">xG (fbref)</option>
+  </select>
+  <select id="conference">
+    <option value="SHIELD">Supporter's Shield</option>
+    <option value="WEST">Western Conference</option>
+    <option value="EAST">Eastern Conference</option>
+  </select>
+  <div id="myGrid" style="width: 500px;" class="ag-theme-balham"></div>
+</body>
+</html>
