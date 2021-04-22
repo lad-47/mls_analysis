@@ -20,7 +20,6 @@ $.ajax({
           headerName: a,
           field: a,
           sortable: true,
-          width: 100,
           resizable: true
         }
       });
@@ -41,6 +40,7 @@ $.ajax({
       // setup the grid after the page has finished loading
       gridDiv = document.querySelector('#myGrid');
       grid = new agGrid.Grid(gridDiv, gridOptions);
+      gridOptions.api.sizeColumnsToFit();
 	  }   
 });
 document.addEventListener('input', function (event) {
