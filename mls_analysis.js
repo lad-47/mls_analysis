@@ -9,6 +9,15 @@ var grid;
 var west = ['MIN','SKC','COL','NSH','DAL','POR','SEA','LAFC','VAN','HOU','RSL','LA','SJ','ATX']
 var east = ['TOR','ATL','CIN','NYC','RBNY','NE','MIA','DCU','CHI','CLB','MTL','PHI','ORL']
 
+function autoSizeAll(skipHeader) {
+  var allColumnIds = [];
+  gridOptions.columnApi.getAllColumns().forEach(function (column) {
+    allColumnIds.push(column.colId);
+  });
+
+  gridOptions.columnApi.autoSizeColumns(allColumnIds, skipHeader);
+}
+
 $.ajax({
 	type: "GET",  
 	url: "https://raw.githubusercontent.com/lad-47/mls_analysis/master/mls_analysis_calc.csv",
@@ -40,7 +49,7 @@ $.ajax({
       // setup the grid after the page has finished loading
       gridDiv = document.querySelector('#myGrid');
       grid = new agGrid.Grid(gridDiv, gridOptions);
-      gridOptions.api.sizeColumnsToFit();
+      autoSizeAll();
 	  }   
 });
 document.addEventListener('input', function (event) {
@@ -90,4 +99,5 @@ document.addEventListener('input', function (event) {
     }
     gridOptions.api.setRowData(rowDataCurrent);
   }
+  autoSizeAll();
 }, false);
