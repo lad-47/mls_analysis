@@ -6,7 +6,7 @@ var gridOptions;
 var gridDiv;
 var grid;
 
-var west = ['MIN','SKC','COL','NSH','DAL','POR','SEA','LAFC','VAN','HOU','RSL','LAG','SJ']
+var west = ['MIN','SKC','COL','NSH','DAL','POR','SEA','LAFC','VAN','HOU','RSL','LA','SJ','ATX']
 var east = ['TOR','ATL','CIN','NYC','RBNY','NE','MIA','DCU','CHI','CLB','MTL','PHI','ORL']
 
 $.ajax({
