@@ -25,11 +25,24 @@ $.ajax({
 	success: function(response)  
 	  {
       columnDefs = $.csv.toArrays(response).shift().map(a => {
-        return {
-          headerName: a,
-          field: a,
-          sortable: true,
-          resizable: true
+        if (a != 'Team' && a != 'wlt') {
+          return {
+            headerName: a,
+            field: a,
+            sortable: true,
+            resizable: true,
+            comparator: (valueA, valueB, nodeA, nodeB, isInverted) => {
+                if (valueA == valueB) return 0;
+                return (parseInt(valueA) > parseInt(valueB)) ? 1 : -1;
+            }
+          }
+        } else {
+          return {
+            headerName: a,
+            field: a,
+            sortable: true,
+            resizable: true
+          }
         }
       });
       rowData = $.csv.toObjects(response);
