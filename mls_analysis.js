@@ -33,7 +33,7 @@ $.ajax({
             resizable: true,
             comparator: (valueA, valueB, nodeA, nodeB, isInverted) => {
                 if (valueA == valueB) return 0;
-                return (parseInt(valueA) > parseInt(valueB)) ? 1 : -1;
+                return (parseFloat(valueA) > parseFloat(valueB)) ? 1 : -1;
             }
           }
         } else {
